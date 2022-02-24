@@ -1,4 +1,23 @@
 // ....Univesal declaration and others......
+
+// How to Call an API
+const RANDOM_QUOTE_API_URI = 'http://api.quotable.io/random'
+
+function getRandomQuote(){
+    return fetch(RANDOM_QUOTE_API_URI)
+    .then(response => response.json())
+    .then(data => data.content)
+}
+
+async function getNextQuote(){
+    const quote = await getRandomQuote()
+   console.log(quote)
+}
+
+getNextQuote()
+
+
+
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
