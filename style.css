@@ -1,3 +1,50 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    margin:0;
+    background-color: #1e0555;
+}
+body, .quoteInput{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.timer{
+    position:absolute;
+    top:3.5rem;
+    font-size:2rem;
+    color: #f0db4f;
+}
+
+.container{
+  background-color: #f0db4f;
+  padding:1rem;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 10px;
+}
+.quoteDisplay{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-left: calc(1rem + 2px);
+    margin-right: calc(-1rem -2px);
+}
+.quoteInput{
+    width:100%;
+    height: 10rem;
+    margin: auto;
+    background-color:transparent;
+    outline: none;
+    border: 2px solid #a1922e;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize:none;
+    padding: .5rem 1rem;
+}
+.quoteInput:focus{
+    border: 2px solid #333;
+}
