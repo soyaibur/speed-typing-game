@@ -7,7 +7,7 @@ const RANDOM_QUOTE_API_URI = 'http://api.quotable.io/random'
 // .....All Element Selection will be undernith here.......
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
-let timer = document.getElementById('timer')
+let timerElement = document.getElementById('timer')
 
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -26,11 +26,29 @@ async function getNextQuote(){
         spanElement.innerText = character
         quoteDisplayElement.appendChild(spanElement)
     });
+  
     clearInput()
+    startTimer()
+    
+}
+getNextQuote()
+
+
+function startTimer(){
+    let startTime = getClearTime()
+    setInterval(()=>{
+        startTime = startTime + 1
+    timerElement.innerHTML = startTime
+    },1000)
     
 }
 
-getNextQuote()
+// i can't clear this fucking bug
+function getClearTime(){
+    return 0
+}
+
+
 
 let everyThingIsCorrect = true
 
@@ -60,6 +78,7 @@ quoteInputElement.addEventListener('input',()=>{
     if(everyThingIsCorrect){
         clearInput()
         getNextQuote()
+
         
     } 
 })
@@ -67,6 +86,8 @@ quoteInputElement.addEventListener('input',()=>{
 function clearInput(){
     quoteInputElement.value = ''
 }
+
+
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
